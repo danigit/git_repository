@@ -24,7 +24,15 @@ COLUMN_OR_MEASURE_NAME_REGEX = r'Property[^:]+:[^"]"([^(\\"|")]+)'
 ####        I have to find a better way of doing this without opening the file three times
 ####        If I read and write in the same scope the problem is that it would be saved as
 ####        utf-16-le which is not ok
-def parsing_layot_file(file_path="", file_name=""):
+def parsing_layot_file(file_path="", file_name="Layout.json"):
+    """
+    Function that parses the Layout.json file and produces a file which has
+    for each page inside the report, which tables, columns and measures are used
+    Args:
+        file_path (str, optional): The path where the Layout.json file is situated. Defaults to "".
+        file_name (str, optional): The file name to be parsed. Defaults to "Layout.json".
+    """
+    
     if not isinstance(file_path, str) or file_path == "":
         print("Path not valid")
 
@@ -77,7 +85,9 @@ def parsing_layot_file(file_path="", file_name=""):
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         file_path = sys.argv[1]
-        parsing_layot_file(file_path, "Layout.json")
+        parsing_layot_file(
+            file_path,
+        )
     else:
         print(
             "You have to pass as argument the folder where the pbit files are stored!"
