@@ -5,8 +5,22 @@
 </br>
 </br>
 
+## Requirements 
 
-## Step 1 - Download the Power BI file 
+</br>
+In order to use Power BI Inspector you have to have installed on your computer the `Python environment` and the `os`, 'shutil`, `zipfile`, 
+
+</br>
+
+## Step 1 - Export Power BI template
+
+</br>
+
+Open the Power BI file that you want to inspect go to `File > Expoert > Power BI template`. This will export the file as a Power BI template (you will se a file with `.pbit` extension). For each file that you want to inspect, first you have to export it as a Power BI template.
+
+</br>
+
+## Step 2 - Download the Power BI file 
 
 </br>
 
@@ -31,7 +45,7 @@ Go to the following GitHub page https://github.com/danigit/power_bi_inspector/bl
 
 </br>
 
-## Step 2 - Create configuration file
+## Step 3 - Create configuration file
 
 </br>
 
@@ -44,11 +58,11 @@ Create a json configuration file in a directory you choose and paste inside the 
 ]
 ```
 
-Remember to change the `path\to\the\pbix\file\that\you\want\to\inspect` with the path where your `.pbix` file is, and the `<name_of_the_file>` with the actual name of the file you wanto to inspect.
+Remember to change the `path\to\the\pbix\file\that\you\want\to\inspect` with the path where your `.pbit` file is, and the `<name_of_the_file>` with the actual name of the file you wanto to inspect.
 
 </br>
 
-## Step 3 - Set up the variables
+## Step 4 - Set up the variables
 
 </br>
 
@@ -58,7 +72,7 @@ In the `power_bi_inspector.pbix` file which you open in Power BI go to Power Que
 
 </br>
 
-## Step 4 - Load the data
+## Step 5 - Load the data
 
 </br>
 
@@ -68,7 +82,7 @@ Now refresh first the `JSON_DATA` table by right clicking on it and selection `R
 
 </br>
 
-## Step 5 - Inspect your file
+## Step 6 - Inspect your file
 
 </br>
 
