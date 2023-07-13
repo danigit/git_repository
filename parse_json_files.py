@@ -39,7 +39,8 @@ def parsing_layot_file(file_path="", file_name="Layout.json"):
     # formating the json file
     data_model_path = os.path.join(file_path, file_name)
     with open(data_model_path, "r") as file:  # , encoding="UTF-16-le") as file:
-        file_json = json.load(file)
+        json_file = file.read()
+        file_json = json.loads(json_file)
         formated_json = json.dumps(file_json, indent=2)
 
     # saving the formated file
@@ -47,7 +48,7 @@ def parsing_layot_file(file_path="", file_name="Layout.json"):
         file.truncate(0)
         file.write(formated_json)
 
-    search_result = [{"page_name": "All pages", "table_name": [], "column_name": []}]
+    search_result = [{"page_name": "All pages", "tables": [], "columns": []}]
     page_number = 0
 
     # finding the elements in the file
@@ -73,7 +74,7 @@ def parsing_layot_file(file_path="", file_name="Layout.json"):
             column_or_measure_regex = re.findall(COLUMN_OR_MEASURE_NAME_REGEX, line)
             if column_or_measure_regex:
                 for match in column_or_measure_regex:
-                    search_result[page_number]["tables"].append({"column_name": match})
+                    search_result[page_number]["columns"].append({"column_name": match})
 
         #### saving the result to a file
         #### TODO - remove the duplicates tables and columns that are in the same page
