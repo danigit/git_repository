@@ -89,6 +89,14 @@ def parse_json_component(component_content):
         if visual_type_regex:
             visual_type = visual_type_regex.group(1)
 
+    # removing the query element
+    if "query" in component_content:
+        del component_content["query"]
+
+    # removing the dataTransforms element
+    if "dataTransforms" in component_content:
+        del component_content["dataTransforms"] 
+
     ## getting the tables and columns associated witht he visual
     tables, columns = find_tables_and_columns(str(component_content))
 
