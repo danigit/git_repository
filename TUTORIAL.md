@@ -8,7 +8,8 @@
 ## Requirements 
 
 </br>
-In order to use Power BI Inspector you have to have installed on your computer the `Python environment` and the `os`, 'shutil`, `zipfile`, 
+
+In order to use Power BI Inspector you have to have installed on your computer the `Python environment` and the `os`, `shutil`, `zipfile`, `sys`, `re`, `json`, `pandas` libraries.
 
 </br>
 
